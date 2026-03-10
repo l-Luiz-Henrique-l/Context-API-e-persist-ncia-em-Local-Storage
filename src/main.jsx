@@ -5,6 +5,8 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
+import { CartProvider } from "./contexts/cartContext.jsx";
+import Cart from "./pages/Cart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +21,19 @@ const router = createBrowserRouter([
         path: "products/:id",
         element: <ProductDetails />,
       },
+      {
+        path: "cart",
+        element: <Cart />,
+      },
     ],
   },
 ]);
 
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  </StrictMode>
 );
