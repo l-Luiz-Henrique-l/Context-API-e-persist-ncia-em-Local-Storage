@@ -1,16 +1,9 @@
-# React + Vite
+Implementação do Carrinho
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Foi implementado um sistema de carrinho de compras utilizando React Context API e useReducer para gerenciamento de estado global. O estado do carrinho permite adicionar, remover, atualizar quantidade de produtos e limpar o carrinho.
 
-Currently, two official plugins are available:
+Também foi criado um hook personalizado (useCart) para facilitar o acesso ao contexto em qualquer componente da aplicação. O carrinho foi integrado à página de detalhes do produto, permitindo adicionar itens através do botão de compra.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Além disso, foi implementada a persistência dos dados com localStorage, garantindo que os itens do carrinho permaneçam mesmo após recarregar a página.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Foi criada a página /cart, onde é possível visualizar os produtos adicionados, alterar quantidades, remover itens e ver o valor total da compra. A Navbar também foi integrada ao carrinho, exibindo a quantidade total de itens e permitindo acesso rápido à página do carrinho.
